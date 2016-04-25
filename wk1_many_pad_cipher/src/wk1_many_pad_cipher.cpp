@@ -58,14 +58,14 @@ static void RunXorStrings(void)
 	int i, j;
 	ofstream outputFile("xoredString.txt", ios::trunc);
 
-	for (i = 0; i < (MAXNOOFCIPHERTXT - 1); i++)
+	for (i = 0; i < 8; i++)
 	{
-		for (j = (i + 2); j < MAXNOOFCIPHERTXT; j++)
+		for (j = (i + 1); j < MAXNOOFCIPHERTXT; j++)
 		{
 			outputFile << "[ " << (i+1) << " ^ " << (j+1) << " ]" << "\r\n";
 			outputFile << xorString(cipherTexts[i], cipherTexts[j], &outputFile);
-			PrintScoreBoard(MAXNOOFCIPHERTXT, 400, &outputFile);
 		}
+		PrintScoreBoard(MAXNOOFCIPHERTXT - 2 - i, 400, &outputFile);
 		updateKey(cipherTexts[i], &outputFile);
 		getPlainText(targetCipher, &outputFile);
 		ClearScoreBoard();
