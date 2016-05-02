@@ -11,6 +11,7 @@
 #include <fstream>
 #include  <iomanip>
 #include <sstream>
+#include <cstdlib>
 
 using namespace std;
 
@@ -58,7 +59,7 @@ static void RunXorStrings(void)
 	int i, j;
 	ofstream outputFile("xoredString.txt", ios::trunc);
 
-	for (i = 0; i < 8; i++)
+	for (i = 0; i < 7; i++)
 	{
 		for (j = (i + 1); j < MAXNOOFCIPHERTXT; j++)
 		{
