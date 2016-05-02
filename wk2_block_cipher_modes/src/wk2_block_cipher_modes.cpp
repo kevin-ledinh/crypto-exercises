@@ -45,6 +45,7 @@ int main() {
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 	AutoSeededRandomPool prng;
 
+
 	byte key[AES::DEFAULT_KEYLENGTH];
 	prng.GenerateBlock(key, sizeof(key));
 
